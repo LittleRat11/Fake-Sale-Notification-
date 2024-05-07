@@ -33,13 +33,13 @@ function getRandomTime() {
     return Math.floor(Math.random() * 59) + 1;
 }
 
-const getRandomDisplayTime = () => Math.round(Math.random() * (8 - 3) + 3);
+const getRandomDisplayTime = () => Math.random() * (8 - 3) + 3;
 const showAlert = () => {
     const randomName = getRandomItem(names);
     const randomProduct = getRandomItem(products);
     const { name, image } = randomProduct;
     productImage.src = image;
-    productText.innerHTML = `<p class="message"> ${randomName} purchased ${name}</p> <p class="time">${getRandomDisplayTime()} mins ago</p>`;
+    productText.innerHTML = `<p class="message"> ${randomName} purchased ${name}</p> <p class="time">${getRandomTime()} mins ago</p>`;
     productAlert.style.display = "flex";
 }
 
